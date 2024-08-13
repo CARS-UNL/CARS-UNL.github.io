@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <title> CARS</title>
-  <!-- This script reads in dropdown-content.
-  It uses XMLHttpRequest, so it will not work on your local computer.
-  Try testing on the live server.
-  I could not figure out how to save this script as a local file and load it in,
-  this would improve the readability of the code if you figure it out-->
-  <script>
-    function includeHTMLSnippet() {
-      id = document.getElementsByTagName("*");
-      for (i = 0; i < id.length; i++) {
-        element = id[i];
-        file = element.getAttribute(
-          "include-html-snippet");
-        if (file) {
-          xmlRequest = new XMLHttpRequest();
-          xmlRequest.onreadystatechange = function () {
-            if (this.readyState == 4) {
-              if (this.status == 200) {
-                element.innerHTML = this.responseText;
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	  <meta charset="utf-8">
+    <script>
+      function includeHTMLSnippet() {
+        id = document.getElementsByTagName("*");
+        for (i = 0; i < id.length; i++) {
+          element = id[i];
+          file = element.getAttribute(
+            "include-html-snippet");
+          if (file) {
+            xmlRequest = new XMLHttpRequest();
+            xmlRequest.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) {
+                  element.innerHTML = this.responseText;
+                }
+                if (this.status == 404) {
+                  element.innerHTML = "Page not found.";
+                }
+                element.removeAttribute(
+                  "include-html-snippet");
+                includeHTMLSnippet();
               }
-              if (this.status == 404) {
-                element.innerHTML = "Page not found.";
-              }
-              element.removeAttribute(
-                "include-html-snippet");
-              includeHTMLSnippet();
             }
+            xmlRequest.open("GET", file, true);
+            xmlRequest.send();
+            return;
           }
-          xmlRequest.open("GET", file, true);
-          xmlRequest.send();
-          return;
         }
-      }
-    };
-  </script>
+      };
+    </script>
+    <title> CARS </title>
 </head>
-
 
 <BODY>
 
