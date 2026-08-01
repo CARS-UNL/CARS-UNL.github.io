@@ -1,1 +1,161 @@
+ <!DOCTYPE html>
 
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	  <meta charset="utf-8">
+    <script>
+      function includeHTMLSnippet() {
+        id = document.getElementsByTagName("*");
+        for (i = 0; i < id.length; i++) {
+          element = id[i];
+          file = element.getAttribute(
+            "include-html-snippet");
+          if (file) {
+            xmlRequest = new XMLHttpRequest();
+            xmlRequest.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) {
+                  element.innerHTML = this.responseText;
+                }
+                if (this.status == 404) {
+                  element.innerHTML = "Page not found.";
+                }
+                element.removeAttribute(
+                  "include-html-snippet");
+                includeHTMLSnippet();
+              }
+            }
+            xmlRequest.open("GET", file, true);
+            xmlRequest.send();
+            return;
+          }
+        }
+      };
+    </script>
+    <title> CARS </title>
+</head>
+
+
+<body>
+  <div class="header">
+    <img style="position:absolute;right:43px;top:63px;widht:90px;height:90px;" src="assets/images/logo.svg" alt="UNL logo">
+    <h1>CARS</h1>
+    <p> Commutative Algebra Reading Seminar </p>
+  </div>
+
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a style="background-color:#d00000;cursor:default;">Summer 2025</a>
+    <div class="dropdown">
+      <button class="dropbtn">Past Semesters
+      </button>
+        <div include-html-snippet="dropdown-content.html"></div>
+    </div>
+  <a style="float:right;background-color:#d00000;cursor:default;">Summer 2024</a>
+  </div>
+	
+<p>
+
+This Summer CARS is organized by Kesavan Mohana Sundaram and Xinyu (Nicole) Xie</p>
+
+</div>
+<div class="tcard">
+<h3> Uyen Tran </h3>
+<h3><em>  Matrix factorizations and free resolutions over a hypersurface
+</em></h3>
+June 9
+<hr> 
+In this talk, we will introduce the notion of matrix factorization and discuss some of its properties. We will also talk about the correspondence between matrix factorizations and maximal Cohen–Macaulay modules over a hypersurface. Consequently, we will outline Eisenbud's proof that every minimal free resolution over a hypersurface is eventually 2-periodic. 
+</div>	
+
+</div>
+<div class="tcard">
+<h3> Robert Ireland </h3>
+<h3><em> A short introduction to Frobenius complexity
+</em></h3>
+June 11
+<hr> 
+In this talk, I'd like to briefly introduce you all to Frobenius complexity, a numerical invariant which tracks how the number of Frobenius splittings of your ring grows as you iterate the Frobenius map.
+</div>	
+
+</div>
+<div class="tcard">
+<h3> Ryan Watson </h3>
+<h3><em> Systems of Higher Homotopies and DG modules over Koszul Complexes
+</em></h3>
+June 16, and 18
+<hr> 
+In this two-talk series I will introduce systems of higher homotopies and how they can be used to produce resolutions that have the structure of a dg module over a Koszul complex. Time permitting, we will see how these connect with support varieties and/or A-infinity module structures. This talk is loosely based on joint work with Dorian Kalir and Kory Pollicove.
+</div>
+
+</div>
+<div class="tcard">
+<h3> Julianne Faur </h3>
+<h3><em> The homotopy Lie algebra and the ring of cohomological operators
+</em></h3>
+June 23, and 25
+<hr> 
+This talk will proceed in two parts. In the first talk, I will explain a way of thinking about the action of the ring S of cohomological operators on a special Ext-module of interest in understanding the cohomological support variety of a local/graded ring R in terms of derivations; then, I will introduce the homotopy Lie algebra, π*, of such an R, and in particular I will share some of my recent results about how the bracket in π* appears in the action of S on the aforementioned Ext-module. The second talk builds on the first talk in the special case when R is a Koszul algebra, where we can say considerably more than we could before; I’ll explain why this is an easier setting, which will require a deeper dive into graded Lie algebras over a field. Time-permitting, I will share some of my stronger results in this vein and use these to give a necessary condition on π* for a Koszul algebra whose cohomological support variety is contained in a hyperplane.
+</div>	
+
+</div>
+<div class="tcard">
+<h3> Zach Nason </h3>
+<h3><em>  Quasi-Gorenstein morphisms and virtually G-small complexes
+</em></h3>
+June 30
+<hr> 
+Let R and S be commutative noetherian local rings and phi: R to S a finite local homomorphism. The homomorphism phi is quasi-Gorenstein if Gdim_R(S) is finite and the derived Hom complex RHom_R(S, R) is isomorphic to S (up to a shift). The quasi-Gorenstein morphisms naturally characterize the Gorenstein property in commutative algebra - the canonical surjection R to k is quasi-Gorenstein if and only if R is Gorenstein. In my talk today, I'll go over some background about quasi-Gorenstein morphisms, will also introduce virtually G-small complexes, and will then sketch the proof of a theorem that links the two concepts together. This talk is joint work with Andrew Soto-Levins and Ryan Watson. 
+</div>	
+
+</div>
+<div class="tcard">
+<h3> Kesavan Mohana Sundaram </h3>
+<h3><em> Vanishing theorems in local cohomology
+</em></h3>
+July 2 
+<hr> 
+Local cohomology, introduced by Grothendieck in the early 1960s, plays a pivotal role in commutative algebra and algebraic geometry. Its vanishing behavior reflects subtle geometric and topological properties of the underlying scheme and has been studied extensively in the work of Grothendieck, Hartshorne, Faltings, and others. Understanding when local cohomology modules vanish remains a fundamental and delicate problem. In this talk, we will present a brief survey of vanishing theorems in local cohomology and discuss a proof of the second vanishing theorem for unramified noetherian regular local rings of mixed characteristic, due to Wenliang Zhang. 
+</div>	
+
+</div>
+<div class="tcard">
+<h3> Nawaj KC </h3>
+<h3><em> On local intersections 
+</em></h3>
+July 21, and 23
+<hr> 
+If the supports of two modules, say M and N, over a local ring R intersect only at the closed point, a somewhat rigid expectation is that in nice enough situations, the dimension inequalty, dim M + dim N <= dim R, is satisfied. We discuss when this is true, when this is not true, and when we have no idea what actually happens. No new results, it will just be me presenting some theorems of Peskine—Szpiro that appeared in print in 1973. 
+</div>		
+
+</div>
+<div class="tcard">
+<h3> Anna Brosowsky </h3>
+<h3><em> A Commutative Algebraist's Introduction to Modern Algebraic Geometry, Week 1: Schemes & Sheaves
+</em></h3>
+July 28, and 30
+<hr> 
+If you've been to an algebraic geometry talk at a conference or seminar, you've probably heard some scary words like "scheme" and "coherent sheaf". Our goal this week is to help you see why these words aren't so scary! We will motivate a scheme by trying to connect geometric objects (varieties and projective space) with commutative algebra objects (ideals that aren't radical and rings that aren't finitely generated k-algebras). We will motivate coherent sheaves by trying to generalize modules to this setting. In addition to defining these objects, we will (time permitting) take a look at how other nice ring adjectives translate to the scheme setting. This talk assumes that you have taken Math 953 (or, have otherwise worked with varieties and projective space).
+</div>		
+
+
+</div>
+<div class="tcard">
+<h3> Lauren Cranton Heller </h3>
+<h3><em> A Commutative Algebraist's Introduction to Modern Algebraic Geometry, Week 2: Divisors and Cohomology
+</em></h3>
+August 4, and 6
+<hr> 
+Continuing Anna's plan from last week, we will introduce two concepts which arise frequently in algebraic geometry talks: divisors/line bundles and sheaf cohomology.  The first talk will assume that you have at least seen the definition of a sheaf, at the level that Anna presented.  We will motivate the study of divisors from discrete valuation rings and the example of projective space.  Then we will summarize the many different words people use to discuss them.  The second talk will continue to use sheaves but may also be useful if you have only seen another type of cohomology (for instance local or topological) and want to know how to think about it in the context of algebraic geometry.
+</div>		
+
+ 
+<script>
+  includeHTMLSnippet();
+</script>
+
+</body>
+
+
+</html>
